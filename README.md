@@ -1,9 +1,9 @@
-# Steam-Activity-Filter
+# Steam Activity Filter
 
-Made by tjtheturtleisawesome(Jayleen Li)
-	Steam Profile: http://steamcommunity.com/id/tjtheturtleisawesome/
-	GitHub: https://github.com/jayleenli
-	
+Made by tjtheturtleisawesome(Jayleen Li)  
+	Steam Profile: http://steamcommunity.com/id/tjtheturtleisawesome/  
+	GitHub: https://github.com/jayleenli  
+	  
 	Version 1.0 Features
 	-Filtering your Steam Activity by friends list!
 	-Hides the following types of posts from unselected users
