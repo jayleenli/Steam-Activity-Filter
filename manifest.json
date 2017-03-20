@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Steam Activity Filter",
+  "description": "This extension will filter out all unwanted Steam Activity posts and keep the ones you want!",
+  "version": "1.0",
+  "icons": { "16": "saflogo.png",
+           "48": "saflogo.png",
+          "128": "saflogo.png" },  
+		  
+  "permissions": [
+        "storage"
+    ],
+  
+  "content_scripts": [
+    {
+      "matches": ["http://steamcommunity.com/id/*","http://steamcommunity.com/profiles/*"],
+      "js": ["jQuery.min.js","steamfilter.js"]
+    }
+  ]
+  
+}
