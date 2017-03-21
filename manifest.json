@@ -8,6 +8,10 @@
            "48": "saflogo.png",
           "128": "saflogo.png" },  
 		  
+  "browser_action": {
+    "default_icon": "saflogo.png"
+	},
+	
   "permissions": [
         "storage"
     ],
