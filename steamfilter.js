@@ -9,18 +9,11 @@ div.className = 'blotter_day';
 document.getElementById('blotter_statuspost_form').appendChild(div);
 /*
 	Instantation variables
-	Encryption Set Up
 */
 var userFriendList = []; //array by [steam MINI profile ID]
 var HTMLtoadd = ""; //for the list of friends on the filter
-var usersToHideChromeStorage; 
 var SAFslideshowDivs = [];
 var currentlydisplayed = 1;
-
-var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase"); 
-var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
- 
-console.log(plaintext);
 
 /*
 	Get the friends link of the steam user
@@ -77,14 +70,6 @@ script.textContent = actualCode;
 (document.head||document.documentElement).appendChild(script);
 
 /*
-	Get Chrome Storage
-*/
-chrome.storage.sync.get('usersToHideChromeStorage',function (obj)
-{
-	usersToHideChromeStorage = obj.usersToHideChromeStorage;
-});
-
-/*
 	Gets entire friends list of user and gets the mini steam IDs for each friend
 	Creates div with labels in it and places checked attributes (if applicable),
 	Puts the divs into string array for the slideshow
@@ -108,18 +93,6 @@ $.get(friendsListLink, null, function(text)
 		var displayName = StringedHTML.substring(displayloc+5, enddisplayloc);
 		userFriendList.push(miniProfID); //NOTE-Mini steam ID
 		var checkedbox = "checked=\"checked\"";
-		
-		//Check Chrome Storage
-		if (usersToHideChromeStorage != undefined)
-		{
-			for (var c = 0; c < usersToHideChromeStorage.length; c++)
-			{
-				if (miniProfID == usersToHideChromeStorage[c])
-				{
-					checkedbox = null;
-				}
-			}
-		}
 		
 		//If display name too long, reduce the characters so it doesn't mess up the slideshow look
 		if (displayName.length >=27)
@@ -153,7 +126,7 @@ $.get(friendsListLink, null, function(text)
 	SAFinnerHTML += SAFslideshowDivs[1];
 	SAFinnerHTML += '</div>';
 	SAFinnerHTML +=	'<div id="SAFarrowright" onmouseover="increaseOpacity(this);" onmouseout="decreaseOpacity(this);" style="float:left;width:25px;height:200px;background-color:#ffffff;opacity: 0.15;"><i class="right SAFarrows" style="position:relative;top:50%;left:25%;"></i></div></div>';
-	SAFinnerHTML += '<br/><div style="position:relative; left:236px;margin-bottom:15px;" class="btn_grey_white_innerfade btn_small btn_uppercase" onclick="sortActivity();"><span id="SAFsortActivity">Filter and Save Information</span></div></div></div>';
+	SAFinnerHTML += '<br/><div style="position:relative; left:295px;margin-bottom:15px;" class="btn_grey_white_innerfade btn_small btn_uppercase" onclick="sortActivity();"><span id="SAFsortActivity">Filter</span></div></div></div>';
 	div.innerHTML = SAFinnerHTML;
 	
 	/*
@@ -208,32 +181,12 @@ $.get(friendsListLink, null, function(text)
 		currentlydisplayed = currentlydisplayed+1;
 		}
 	});
-	
-	/*
-		Activate filtering if Chrome Storage is already set, adds the same functions again
-	*/
-	function getGrandParent(e) {var result = [];var count = 0;for (var p = e && e.parentElement; p; p = p.parentElement) {if (count == 2){break;}else{result.push(p);count++;}}return result[1];}
-	var elements2= document.getElementsByClassName("blotter_avatar_holder");
-	if (usersToHideChromeStorage != undefined)
-	{
-		for (var x=1; x<elements2.length;x++) 
-		{
-			var avatarholder = elements2[x].innerHTML;var miniProfileStart = avatarholder.indexOf('data-miniprofile');
-			var miniProfileEnd = avatarholder.indexOf('"',miniProfileStart+18);
-			var miniProfileID = avatarholder.substring(miniProfileStart+18,miniProfileEnd);
-			for (var u = 0; u < usersToHideChromeStorage.length; u++)
-			{
-				if (usersToHideChromeStorage[u] == miniProfileID){getGrandParent(elements2[x]).style.display='none';}
-			}
-		}
-	}
 });
 	
 /*
 	When user clicks 'Filter and Save Information' Button
 		-Checks all checkboxs based on div slideshow to see if its checked/unchecked
 		-Filters based on preferences, hides the posts from unselected users
-		-Puts the list of those on the 'hide' into Chrome Storage
 */
 $('div').on('click', '#SAFsortActivity', function(event)
 {
@@ -270,5 +223,4 @@ $('div').on('click', '#SAFsortActivity', function(event)
 			if (usersToHide[u] == miniProfileID){getGrandParent(elements2[x]).style.display='none';}
 		}
 	}
-	chrome.storage.sync.set({"usersToHideChromeStorage": usersToHide}, function() {});
 });
