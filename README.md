@@ -11,7 +11,7 @@ Made by tjtheturtleisawesome(Jayleen Li)
 		*New Games
 		*Status Posts
 		*Favorites
-	-Storing your filter preferences in Chrome Storage
+	-(removed due to Chrome developer policy publishing complications)Storing your filter preferences in Chrome Storage
 	-Works for Steam users with or without personalized Steam IDs
 	
 	Side Note: Why does steam use an old Jquery? makes this so much harder :)
@@ -28,3 +28,20 @@ Made by tjtheturtleisawesome(Jayleen Li)
 	-Future Feature?: Search for specific user
 	-Future Feature?: Filter for the smaller info 
 	-Future Feature?: Select All option/Deselect all option
+	
+Chrome Extension Description on home page
+
+	Steam Activity Filter hides unwanted posts on your Steam Activity Feed. (e.g. https://steamcommunity.com/my/home)
+
+	Ever get overwhelmed by the number of posts your Steam Activity Feed by the people on your friends list? Steam Activity Filter(SAF) is here to help.
+
+	SAF will automatically place a filtering interface for you to use when you visit your Steam Friend Activity Home page. SAF will get your current Steam Friends list (https://steamcommunity.com/my/friends) and place the usernames in the interface at the top of the feed list. 
+
+	How to use Steam Activity Filter:
+	To filter, uncheck the usernames of whom you do not want to see in your feed. Then click the filter button, and your Steam Activity Feed will change instantly. 
+
+	Hides the following types of posts
+	-Screenshots
+	-New Games
+	-Status Posts
+	-Favorites on Steam Community items
