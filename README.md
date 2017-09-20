@@ -3,6 +3,7 @@
 Made by tjtheturtleisawesome(Jayleen Li)  
 	Steam Profile: http://steamcommunity.com/id/tjtheturtleisawesome/  
 	GitHub: https://github.com/jayleenli  
+	Chrome Extension Webstore Page: https://chrome.google.com/webstore/detail/steam-activity-filter/dnhaemngbanccjamofoeokgpadfegjcf  
 	  
 	Version 1.0 Features
 	-Filtering your Steam Activity by friends list!
