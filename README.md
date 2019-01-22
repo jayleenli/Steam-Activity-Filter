@@ -1,6 +1,8 @@
-# Steam Activity Filter
-
-Made by tjtheturtleisawesome(Jayleen Li)  
+# Steam Activity Filter  
+  
+This chrome extension will allow you to manage your Steam Activity Page by sorting through the steam friends you have on your friends list. Selected friends will appear and non selected friends will be hidden. 
+  
+Made by Jayleen Li
 	Steam Profile: http://steamcommunity.com/id/tjtheturtleisawesome/  
 	GitHub: https://github.com/jayleenli  
 	Chrome Extension Webstore Page: https://chrome.google.com/webstore/detail/steam-activity-filter/dnhaemngbanccjamofoeokgpadfegjcf  
